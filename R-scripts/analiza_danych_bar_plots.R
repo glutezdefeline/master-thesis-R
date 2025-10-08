@@ -26,6 +26,13 @@ setwd("C:/Users/privm/OneDrive/UMED/MAGISTERKA/MAG")
 data = read.csv("ankieta.csv")
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Force order of age labels ("≥26" at the end)
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+wiek_levels <- c("18-21", "22-25", "≥26")
+data$Wiek <- factor(data$Wiek, levels = wiek_levels, ordered = TRUE)
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Bar plot (ilosc kobiet i mezczyzn)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
